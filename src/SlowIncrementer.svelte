@@ -1,10 +1,10 @@
 <script>
-	export let count = 0;
-	export let time = 0;
+	export let count;
+	export let time;
 	export let label;
 
 	let disabled = false;
-	let promise = slow(() => { }, () => { }, 0);
+	let promise;
 
 	function onClick() {
 		disabled = true;
@@ -33,11 +33,11 @@
 </script>
 
 <div>
-	<button on:click={onClick} disabled="{disabled}">
+	<button on:click={onClick} disabled={disabled}>
 		{#await promise}
 			Thinking...
 		{:then}
-		+ Add {label}
+			+ Add {label}
 		{/await}
 	</button>
 </div>
