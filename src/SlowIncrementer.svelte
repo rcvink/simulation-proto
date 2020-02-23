@@ -32,8 +32,12 @@
 
 </script>
 
-<div>/
-		<button on:click={onClick} disabled="{disabled}">
-			+ Add {label}
-		</button>
+<div>
+	<button on:click={onClick} disabled="{disabled}">
+		{#await promise}
+			Thinking...
+		{:then}
+		+ Add {label}
+		{/await}
+	</button>
 </div>
