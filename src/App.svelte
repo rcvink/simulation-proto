@@ -22,4 +22,4 @@
 <SimpleIncrementer count={cpuCount} label="CPU"/>
 <SimpleIncrementer count={storageCount} label="storage"/>
 <SimpleIncrementer count={networkCount} label="network"/>
-<SlowIncrementer count={haikuCount} time="3000" label="haiku"/>
+<SlowIncrementer count={haikuCount} time="500" label="haiku"/>
