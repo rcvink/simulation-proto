@@ -1,14 +1,14 @@
 <script>
 	export let count;
-	export let time;
 	export let label;
+	export let cpuCount;
 
 	let disabled = false;
 	let promise;
 
 	function onClick() {
 		disabled = true;
-		promise = slow(increment, enable, time);
+		promise = slow(increment, enable, getRate());
 	}
 	
 	async function slow(fn1, fn2, ms) {
@@ -19,7 +19,7 @@
 
 	function timeout(ms) {
 		return new Promise(resolve => 
-			setTimeout(resolve, ms));
+			setTimeout(resolve, ms)); 
 	}
 
 	function increment() {
@@ -28,6 +28,10 @@
 
 	function enable() {
 		disabled = false;
+	}
+
+	function getRate() {
+		return 1000 / cpuCount;
 	}
 
 </script>
