@@ -34,10 +34,22 @@
 	<h1>Crypto: {$cryptoCount} λ</h1>
 </div>
 
-<SimpleIncrementer count={memoryCount} label="memory"/>
-<SimpleIncrementer count={cpuCount} label="CPU"/>
-<SimpleIncrementer count={storageCount} label="storage"/>
-<SimpleIncrementer count={networkCount} label="network"/>
+<SimpleIncrementer 
+	count={memoryCount}
+	currency={cryptoCount} 
+	label="memory"/>
+<SimpleIncrementer 
+	count={cpuCount}
+	currency={cryptoCount} 
+	label="CPU"/>
+<SimpleIncrementer 
+	count={storageCount}
+	currency={cryptoCount}
+	label="storage"/>
+<SimpleIncrementer 
+	count={networkCount}
+	currency={cryptoCount} 
+	label="network"/>
 <SlowIncrementer 
 	count={haikuCount} 
 	cpuCount={$cpuCount}
