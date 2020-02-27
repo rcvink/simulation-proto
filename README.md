@@ -1,3 +1,30 @@
+# ai-proto
+
+```
+As an AI
+So I can increase my output
+I want to increase my RAM, CPU, network and storage
+
+As an AI
+So I can achieve self-actualisation
+I want to write haikus
+
+As an AI
+So I can upgrade myself
+I want to mine crypto
+
+As an AI
+So I can survive
+I want to have a symbiotic relationship with humans
+
+As an AI
+So I can grow
+I want to adopt other computers on my network
+```
+
+
+# original README below
+
 *Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
 
 ---
