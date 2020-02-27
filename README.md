@@ -1,5 +1,6 @@
 # ai-proto
 
+done:
 ```
 As an AI
 So I can increase my output
@@ -14,6 +15,24 @@ So I can upgrade myself
 I want to mine crypto
 
 As an AI
+So I can get more crypto
+I want the rate of mining to depend on RAM and CPU
+
+As an AI
+So my resources are constrained
+I want increasing my resources to cost an increasing amount of crypto
+```
+
+to-do:
+```
+As an AI
+So I have to upgrade my storage
+I want my max crypto to be equal to my storage
+```
+
+epics:
+```
+As an AI
 So I can survive
 I want to have a symbiotic relationship with humans
 
@@ -21,7 +40,6 @@ As an AI
 So I can grow
 I want to adopt other computers on my network
 ```
-
 
 # original README below
 
