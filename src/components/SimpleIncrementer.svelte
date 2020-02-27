@@ -12,13 +12,7 @@
 </script>
 
 <div>
-	{#if ($currency >= cost)}
-		<button on:click={increment}>
-			+ Increase {label} (-{cost}λ)
-		</button>
-	{:else}
-		<button disabled>
-			+ Increase {label} (-{cost}λ)
-		</button>
-	{/if}
+	<button on:click={increment} disabled={cost > $currency}>
+		+ Increase {label} (-{cost}λ)
+	</button>
 </div>
