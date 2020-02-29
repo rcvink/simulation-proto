@@ -57,6 +57,7 @@
 <LinearIncrementer 
 	isEnabled={isCryptoEnabled} 
 	count={cryptoCount} 
+	maxCount={storageCount}
 	enabledText="Stop mining" 
 	disabledText="Mine"
 	rate={$cpuCount}
