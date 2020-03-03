@@ -27,7 +27,6 @@
 .horizontal-container {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
 }
 </style>
 
