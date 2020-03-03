@@ -25,17 +25,25 @@ I want increasing my resources to cost an increasing amount of crypto
 As an AI
 So I have to upgrade my storage
 I want my max crypto to be equal to my storage
-```
 
-to-do:
-```
 As an player
 So I can not be bored
 I want to see the latest haiku
 ```
 
+to-do:
+```
+As an AI
+So haikus are more rewarding
+I want the time taken to write to depend on RAM and CPU
+```
+
 epics:
 ```
+As an AI
+So humans can find me useful
+I want them to like my haikus
+
 As an AI
 So I can survive
 I want to have a symbiotic relationship with humans
@@ -104,39 +112,4 @@ If you're building a single-page app (SPA) with multiple routes, sirv needs to b
 
 ```js
 "start": "sirv public --single"
-```
-
-
-## Deploying to the web
-
-### With [now](https://zeit.co/now)
-
-Install `now` if you haven't already:
-
-```bash
-npm install -g now
-```
-
-Then, from within your project folder:
-
-```bash
-cd public
-now deploy --name my-project
-```
-
-As an alternative, use the [Now desktop client](https://zeit.co/download) and simply drag the unzipped project folder to the taskbar icon.
-
-### With [surge](https://surge.sh/)
-
-Install `surge` if you haven't already:
-
-```bash
-npm install -g surge
-```
-
-Then, from within your project folder:
-
-```bash
-npm run build
-surge public my-project.surge.sh
 ```
