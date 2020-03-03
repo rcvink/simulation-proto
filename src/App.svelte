@@ -6,11 +6,13 @@
 		networkCount,
 		haikuCount,
 		cryptoCount,
-		isCryptoEnabled
+		isCryptoEnabled,
+		allHaikus,
 	} from './stores.js';
 	import SimpleIncrementer from './components/SimpleIncrementer.svelte';
 	import SlowIncrementer from './components/SlowIncrementer.svelte';
 	import LinearIncrementer from './components/LinearIncrementer.svelte';
+	import Haikus from './components/Haikus.svelte';
 </script>
 
 <style>
@@ -20,6 +22,12 @@
 
 .human-resources {
 	outline: solid;
+}
+
+.horizontal-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
 }
 </style>
 
@@ -34,31 +42,40 @@
 	<h1>Crypto: {$cryptoCount} λ</h1>
 </div>
 
-<SimpleIncrementer 
-	count={memoryCount}
-	currency={cryptoCount} 
-	label="memory"/>
-<SimpleIncrementer 
-	count={cpuCount}
-	currency={cryptoCount} 
-	label="CPU"/>
-<SimpleIncrementer 
-	count={storageCount}
-	currency={cryptoCount}
-	label="storage"/>
-<SimpleIncrementer 
-	count={networkCount}
-	currency={cryptoCount} 
-	label="network"/>
-<SlowIncrementer 
-	count={haikuCount} 
-	cpuCount={$cpuCount}
-	label="haiku"/>
-<LinearIncrementer 
-	isEnabled={isCryptoEnabled} 
-	count={cryptoCount} 
-	maxCount={storageCount}
-	enabledText="Stop mining" 
-	disabledText="Mine"
-	rate={$cpuCount}
-	incrementBy={$memoryCount}/>
+<div class="horizontal-container">
+	<div class="incrementers">
+		<SimpleIncrementer 
+			count={memoryCount}
+			currency={cryptoCount} 
+			label="memory"/>
+		<SimpleIncrementer 
+			count={cpuCount}
+			currency={cryptoCount} 
+			label="CPU"/>
+		<SimpleIncrementer 
+			count={storageCount}
+			currency={cryptoCount}
+			label="storage"/>
+		<SimpleIncrementer 
+			count={networkCount}
+			currency={cryptoCount} 
+			label="network"/>
+		<SlowIncrementer 
+			count={haikuCount} 
+			cpuCount={$cpuCount}
+			label="haiku"/>
+		<LinearIncrementer 
+			isEnabled={isCryptoEnabled} 
+			count={cryptoCount} 
+			maxCount={storageCount}
+			enabledText="Stop mining" 
+			disabledText="Mine"
+			rate={$cpuCount}
+			incrementBy={$memoryCount}/>
+	</div>
+	<Haikus 
+		allHaikus={$allHaikus}
+		haikuCount={haikuCount}/>
+</div>
+
+
