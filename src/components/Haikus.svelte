@@ -4,6 +4,7 @@
 
     export let allHaikus;
     export let haikuCount;
+    const id = 'haikus';
     let haikus = [];
     let div;
 
@@ -23,7 +24,7 @@
         div.scrollTop = div.scrollHeight;
     
     onMount(() => {
-        div = document.getElementById('haikus');
+        div = document.getElementById(id);
         haikuCount.subscribe(addNewHaiku);
     });
 </script>
@@ -36,7 +37,7 @@
 }
 </style>
 
-<div id="haikus">
+<div id={id}>
     {#each haikus as haiku}
         <Haiku text={haiku}/>
     {/each}
