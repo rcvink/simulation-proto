@@ -4,8 +4,8 @@
 	export let label;
 	let cost = 1;
 
-	function increment() {
-		count.update(n => n + 1);
+	const increment = () => {
+		count.update(n => ++n);
 		currency.update(n => n - cost);
 		++cost;
 	}

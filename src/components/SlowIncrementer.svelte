@@ -6,33 +6,29 @@
 	let disabled = false;
 	let promise;
 
-	function onClick() {
+	const onClick = () => {
 		disabled = true;
 		promise = slow(increment, enable, getRate());
 	}
 	
-	async function slow(fn1, fn2, ms) {
+	const slow = async (fn1, fn2, ms) => {
 		await timeout(ms);
 		fn1(ms);
 		fn2();
 	}
 
-	function timeout(ms) {
-		return new Promise(resolve => 
+	const timeout = (ms) =>
+		new Promise(resolve => 
 			setTimeout(resolve, ms)); 
-	}
 
-	function increment() {
+	const increment = () => 
 		count.update(n => n + 1);
-	}
 
-	function enable() {
+	const enable = () => 
 		disabled = false;
-	}
 
-	function getRate() {
-		return 1000 / cpuCount;
-	}
+	const getRate = () =>
+		1000 / cpuCount;
 
 </script>
 
