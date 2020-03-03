@@ -21,13 +21,17 @@ I want the rate of mining to depend on RAM and CPU
 As an AI
 So my resources are constrained
 I want increasing my resources to cost an increasing amount of crypto
+
+As an AI
+So I have to upgrade my storage
+I want my max crypto to be equal to my storage
 ```
 
 to-do:
 ```
-As an AI
-So I have to upgrade my storage
-I want my max crypto to be equal to my storage
+As an player
+So I can not be bored
+I want to see the latest haiku
 ```
 
 epics:
