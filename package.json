@@ -19,6 +19,8 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
-    "sirv-cli": "^0.4.4"
+    "@types/two.js": "^0.7.2",
+    "sirv-cli": "^0.4.4",
+    "two.js": "https://github.com/rcvink/two.js/tarball/52377e99656c969af8afc7e8b9b7a65328d1af5e"
   }
 }
