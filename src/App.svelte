@@ -13,6 +13,7 @@
 	import SlowIncrementer from './components/SlowIncrementer.svelte';
 	import LinearIncrementer from './components/LinearIncrementer.svelte';
 	import Haikus from './components/Haikus.svelte';
+	import Visualiser from './components/Visualiser.svelte';
 </script>
 
 <style>
@@ -37,7 +38,7 @@
 	<h1>Network: {$networkCount} bits per second</h1>
 </div>
 <div class="human-resources">
-	<h1>Haikus written: {$haikuCount}</h1>
+	<h1>Haikus: {$haikuCount}</h1>
 	<h1>Crypto: {$cryptoCount} λ</h1>
 </div>
 
@@ -75,6 +76,7 @@
 	<Haikus 
 		allHaikus={$allHaikus}
 		haikuCount={haikuCount}/>
+	<Visualiser isCryptoEnabled={isCryptoEnabled}/>
 </div>
 
 
