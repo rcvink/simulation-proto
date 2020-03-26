@@ -8,11 +8,13 @@
 		cryptoCount,
 		isCryptoEnabled,
 		allHaikus,
+		haikuTime,
 	} from './stores.js';
 	import SimpleIncrementer from './components/SimpleIncrementer.svelte';
 	import SlowIncrementer from './components/SlowIncrementer.svelte';
 	import LinearIncrementer from './components/LinearIncrementer.svelte';
 	import Haikus from './components/Haikus.svelte';
+	import HaikuTime from './components/HaikuTime.svelte';
 </script>
 
 <style>
@@ -39,6 +41,7 @@
 <div class="human-resources">
 	<h1>Haikus written: {$haikuCount}</h1>
 	<h1>Crypto: {$cryptoCount} λ</h1>
+	<h1>Haiku time: <HaikuTime time={$haikuTime}/> </h1>
 </div>
 
 <div class="horizontal-container">
@@ -61,7 +64,7 @@
 			label="network"/>
 		<SlowIncrementer 
 			count={haikuCount} 
-			cpuCount={$cpuCount}
+			time={$haikuTime}
 			label="haiku"/>
 		<LinearIncrementer 
 			isEnabled={isCryptoEnabled} 
