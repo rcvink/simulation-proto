@@ -41,7 +41,7 @@
 <div class="human-resources">
 	<h1>Haikus written: {$haikuCount}</h1>
 	<h1>Crypto: {$cryptoCount} λ</h1>
-	<h1>Haiku time: <HaikuTime time={$haikuTime}/> </h1>
+	<h1>Haiku time: <HaikuTime time={haikuTime}/> </h1>
 </div>
 
 <div class="horizontal-container">
