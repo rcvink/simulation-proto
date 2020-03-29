@@ -30,6 +30,10 @@
 	display: flex;
 	flex-direction: row;
 }
+
+.incrementers {
+	max-width: 15%;
+}
 </style>
 
 <div class="computer-resources">
