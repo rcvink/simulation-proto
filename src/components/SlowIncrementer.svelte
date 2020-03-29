@@ -5,14 +5,15 @@
 
 	let isThinking = false;
 	let promise;
+	let cancel;
 
 	const onClick = () => {
 		if (isThinking) {
+			cancel();
 			isThinking = false;
-			promise = null;
 		} else {
+			isThinking = true;
 			promise = think(
-				() => isThinking = true,
 				() => isThinking = false,
 				increment,
 				time);
@@ -20,15 +21,17 @@
 	}
 
 
-	const think = async (beforeFn, afterFn1, afterFn2, ms) => {
-		beforeFn();
+	const think = async (fn1, fn2, ms) => {
 		await timeout(ms);
-		afterFn1();
-		afterFn2();
+		fn1();
+		fn2();
 	}
 
 	const timeout = (ms) =>
-		new Promise(resolve => setTimeout(resolve, ms));
+		new Promise((resolve, reject) => {
+			cancel = reject;
+			setTimeout(resolve, ms);
+		});
 
 	const increment = () => 
 		count.update(n => n + 1);
@@ -39,6 +42,8 @@
 		{#await promise}
 			Thinking... (cancel)
 		{:then}
+			+ Add {label}
+		{:catch}
 			+ Add {label}
 		{/await}
 	</button>
