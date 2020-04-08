@@ -10,7 +10,8 @@
 	let cancel;
 	let end;
 	let now = new Date();
-	$: timeLeft = (end - now.getTime());
+	$: secsRemaining = getSecsRemaining(end, now);
+	$: remainingLabel = getRemainingLabel(secsRemaining);
 
 	onMount(() => {
 		const interval = setInterval(() => {
@@ -28,18 +29,28 @@
 			isThinking = false;
 		} else {
 			isThinking = true;
-			end = new Date(new Date().getTime() + time);
+			end = getEnd();
 			promise = think(
-				() => isThinking = false,
-				increment,
-				time);
+				time,
+				[ 
+					() => isThinking = false,
+					increment,
+				]);
 		}
 	}
 
-	const think = async (fn1, fn2, ms) => {
+	const getEnd = () => 
+		new Date(new Date().getTime() + time);
+
+	const getSecsRemaining = (endTime, nowTime) =>
+		Math.ceil((endTime - nowTime.getTime()) / 1000);
+
+	const getRemainingLabel = (secs) =>
+		secs == 1 ? 'sec remains' : 'secs remain';
+
+	const think = async (ms, fns) => {
 		await timeout(ms);
-		fn1();
-		fn2();
+		fns.forEach(fn => fn());
 	}
 
 	const timeout = (ms) =>
@@ -60,7 +71,7 @@ button {
 
 <button on:click={onClick}>
 	{#await promise}
-		Thinking... {Math.round(timeLeft / 1000)} secs remain (cancel) 
+		Thinking... {secsRemaining} {remainingLabel} (cancel) 
 	{:then}
 		+ Add {label}
 	{:catch}
