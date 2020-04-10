@@ -28,5 +28,5 @@
 </style>
 
 <span class={severity}>
-{Math.ceil($time)}
+{Math.ceil($time) / 1000}
 </span>
